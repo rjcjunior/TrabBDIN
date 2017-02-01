@@ -1,0 +1,9 @@
+Explicação, Diagrama Floricultura.
+
+Uma floricultura atende uma ou muitas regiões, cada região tem um id e cep para identificação, e uma região pode ser atendida por varias floriculturas ou nenhuma.
+A floricultura tambem possui um unico estoque, para consulta das flores que ela contem, podendo conter nenhuma ou muitas flores de um certa especie.
+O cliente faz um ou varios pedidos que é/são enviado(s) para a floricultura da região da entrega do pedido. Um pedido está associado a um unico cliente.
+O cliente possui um ou varios endereços e um endereço é associado a um unico cliente. Pedido  possui somente um endereço para entrega, e o endereço pode ter varias pedidos
+a serem entregues.
+O pedido contem uma qnt especifica de uma ou varias flores,
+e uma flor ta contido em um pedido.
