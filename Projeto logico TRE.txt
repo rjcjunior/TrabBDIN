@@ -1,7 +1,7 @@
 Localidade(localidade_id:serial, nome:varchar[80],cep:varchar[8])
 	Primary Key(localidade_id)
 
-Candidato(candidato_id:serial, nome:varchar[80], localidade_id:integer, 	partido_id:integer, codcand:integer, numerovotos:integer)
+Candidato(candidato_id:serial, nome:varchar[80], localidade_id:integer, 	partido_id:integer, codcand:integer)
 	Primary Key(candidato_id)
 	localidade_id referencia Localidade
 	partido_id referencia Partido
@@ -21,4 +21,9 @@ Eleitor(eleitor_id:serial, nome:varchar[80],cpf:varchar[11] secao_id:integer)
 	Primary Key(eleitor_id)
 	secao_id referencia Seção
 
-Obs: As chaves primarias estão diferentes do modelo relacional pois não tinha botado os ids como atributos, mudei o nome de alguns atributos que não estavam bem claros, e adicionei o atributo numerodevotos no candidato e o numsecao na seção
+Voto(voto_id:serial, secao_id:integer, candidato_id:integer)
+	Primary Key(voto_id)
+	secao_id referencia Seção
+	candidato_id referencia Candidato
+
+Obs: As chaves primarias estão diferentes do modelo relacional pois não tinha botado os ids como atributos, mudei o nome de alguns atributos que não estavam bem claros, e adicionei o atributo numsecao na seção. Tambem criei uma entidade voto, que recebe o codigo da seção e o codigo do candidato, o que mudaria a relação entre eleitor e seção, que ao inves, de ser "votar", seria recebe "recebe". A entidade voto se relacionaria com a seção e o candidato.
