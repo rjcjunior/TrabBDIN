@@ -26,4 +26,4 @@ Voto(voto_id:serial, secao_id:integer, candidato_id:integer)
 	secao_id referencia Seção
 	candidato_id referencia Candidato
 
-Obs: As chaves primarias estão diferentes do modelo relacional pois não tinha botado os ids como atributos, mudei o nome de alguns atributos que não estavam bem claros, e adicionei o atributo numsecao na seção. Tambem criei uma entidade voto, que recebe o codigo da seção e o codigo do candidato, o que mudaria a relação entre eleitor e seção, que ao inves, de ser "votar", seria recebe "recebe". A entidade voto se relacionaria com a seção e o candidato.
+Obs: As chaves primarias estão diferentes do modelo relacional pois não tinha botado os ids como atributos, mudei o nome de alguns atributos que não estavam bem claros, e adicionei o atributo numsecao na seção. Tambem criei uma entidade voto, que recebe o codigo da seção e o codigo do candidato, o que mudaria a relação entre eleitor e seção, que ao inves, de ser "votar", seria recebe "recebe". A entidade voto se relacionaria com a seção e o candidato. Essa entidade foi criada pois o voto se tornaria secreto, e corrigiria o problema da modelo relacional
