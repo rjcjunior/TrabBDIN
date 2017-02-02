@@ -1,0 +1,44 @@
+Cliente(cliente_id: serial, nome: varchar[80], telefone: varchar[11])
+Primary Key(cliente_id)
+
+Pedido( pedido_id: serial, cliente_id: serial, 
+floricultura_id: serial, endereço_id: serial)
+Primary Key(pedido_id)
+cliente_id referencia Cliente
+floricultura_id referencia Floricultura
+endereço_id referencia Endereço
+
+Endereço( endereço_id: serial, numerocasa: integer, cep: varchar[8], cliente_id: serial)
+Primary Key(endereço_id)
+cliente_id referencia Cliente
+
+Pedido-Flores(pedido_id: serial, qnt: integer, flor_id: serial)
+Primary Key(pedido_id, flor_id)
+pedido_id referencia Pedido
+flor_id referencia Flores
+
+Flores(flor_id: serial, nome: varchar[80], especie: varchar[30])
+Primary Key(flor_id)
+
+Estoque-Flores(estoque_id: serial, flor_id: serial, qnt:integer)
+Primary Key(estoque_id, flor_id)
+estoque_id referencia Estoque
+flor_id referencia Flores
+
+Estoque(estoque_id: serial, floricultura_id: serial)
+Primary Key(estoque_id)
+floricultura_id referencia Floricultura
+
+Floricultura(floricultura_id: serial, nome: varchar[80], telefone: varchar[9])
+Primary Key(floricultura_id)
+
+Floricultura-Regiao(floricultura_id: serial, regiao_id: serial)
+Primary Key(floricultura_id, regiao_id)
+idfloricultura referencia Floricultura
+regiao_id referencia Região
+
+Regiao(regiao_id: serial, cep: varchar[8])
+Primary Key(regiao_id)
+
+
+Obs: As chaves primarias estão diferentes do modelo relacional pois não tinha botado os ids como atributos
