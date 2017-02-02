@@ -1,7 +1,7 @@
 Localidade(localidade_id:serial, nome:varchar[80],cep:varchar[8])
 	Primary Key(localidade_id)
 
-Candidato(candidato_id:serial, nome:varchar[80], localidade_id:integer, 	partido_id:integer, codcand:integer)
+Candidato(candidato_id:serial, nome:varchar[80], localidade_id:integer, 	partido_id:integer, codcand:integer, numerovotos:integer)
 	Primary Key(candidato_id)
 	localidade_id referencia Localidade
 	partido_id referencia Partido
@@ -17,8 +17,8 @@ Seção(secao_id:serial, zona_id:integer)
 	Primary Key(secao_id)
 	zona_id referencia Zonaeleitoral
 
-Eleitor(eleitor_id:serial, nome:varchar[80], secao_id:integer)
+Eleitor(eleitor_id:serial, nome:varchar[80],cpf:varchar[11] secao_id:integer)
 	Primary Key(eleitor_id)
 	secao_id referencia Seção
 
-Obs: As chaves primarias estão diferentes do modelo relacional pois não tinha botado os ids como atributos, mudei o nome de alguns atributos que não estavam bem claros
+Obs: As chaves primarias estão diferentes do modelo relacional pois não tinha botado os ids como atributos, mudei o nome de alguns atributos que não estavam bem claros, e adicionei o atributo numerodevotos no candidato
